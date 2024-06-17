@@ -6,6 +6,7 @@ export const metadata = {
   description: "Bienes raíces",
 };
 
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">

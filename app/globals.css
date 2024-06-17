@@ -5,3 +5,28 @@
 .shadow_style{
     box-shadow: 0px 0px 5px 0px rgba(75, 75, 75, 0.75);
 }
+
+.swiper-pagination-bullet {
+    width: 16px !important; 
+    height: 16px !important;
+    background-color: #fff; 
+    opacity: 1;
+    transition: all 0.3s ease-in-out; 
+}
+
+.swiper-pagination-bullet-active {
+    width: 40px !important;
+    border-radius: 10px !important;
+    background-color: #0aa86c !important; 
+}
+
+.section-newsletter{
+    background-image: url('https://ggvktlgwmfhumvfhiliw.supabase.co/storage/v1/object/sign/Storage/pexels-heyho-6315808.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJTdG9yYWdlL3BleGVscy1oZXloby02MzE1ODA4LmpwZyIsImlhdCI6MTcxODY0NDIzMiwiZXhwIjo0MzEwODE3MDMyfQ.j4B53aqXATZ94XiwBK5iO7MXoRhko9C_sNXDx735mRg&t=2024-06-17T17%3A10%3A31.144Z');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.section-newsletter__div{
+    background-color: rgba(6, 71, 44, 0.7);
+}
