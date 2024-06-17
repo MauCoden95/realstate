@@ -119,9 +119,9 @@ export default function Home() {
 
   return (
     <div>
-      <section className="relative w-full min-h-[30rem] flex gap-7 items-center px-14 py-8">
-        <div data-aos="fade-right" className="w-3/6 h-full">
-          <h2 className="text-4xl">
+      <section className="relative w-full min-h-[30rem] flex flex-col md:flex-row gap-7 items-center px-8 md:px-14 py-8">
+        <div data-aos="fade-right" className="w-full md:w-3/6 h-full">
+          <h2 className="text-4xl text-center md:text-left">
             Encontrá tu <span className="text-teal-600">lugar perfecto</span>{" "}
             para vivir
           </h2>
@@ -130,9 +130,9 @@ export default function Home() {
             propiedades y asesoramiento personalizado para hacer realidad tus
             sueños inmobiliarios. ¡Descubre tu nuevo hogar hoy mismo!
           </p>
-          <div className="absolute w-[600px] h-12 mt-6 flex gap-3">
+          <div className="absolute md:relative w-full md:w-[600px] h-12 mt-6 md:mt-20 grid grid-cols-2 md:flex gap-3">
             <select
-              className="w-1/5 h-full text-center border-b-2 border-teal-600"
+              className="w-full md:w-1/5 h-full text-center py-2 md:py-0 border-b-2 border-teal-600"
               id="opciones"
               name="opciones"
               onChange={(e) => setType(e.target.value)}
@@ -146,7 +146,7 @@ export default function Home() {
               <option value="Local">Local</option>
             </select>
             <select
-              className="w-1/5 h-full text-center border-b-2 border-teal-600"
+              className="w-full md:w-1/5 h-full text-center py-2 md:py-0 border-b-2 border-teal-600"
               id="opciones"
               name="opciones"
               onChange={(e) => setProp(e.target.value)}
@@ -156,22 +156,21 @@ export default function Home() {
               <option value="Alquiler">Alquilar</option>
             </select>
             <input
-              className="w-2/5 h-full border-b-2 border-teal-600 px-6"
+              className="w-full md:w-2/5 h-full py-2 md:py-0 border-b-2 border-teal-600 px-6"
               placeholder="Ubicacion"
               type="text"
             />
-            <button className="w-1/5 text-white rounded-lg bg-teal-600 hover:bg-teal-800 duration-300">
+            <button className="w-full md:w-1/5 py-2 md:py-0 text-white rounded-lg bg-teal-600 hover:bg-teal-800 duration-300">
               Buscar
             </button>
           </div>
         </div>
         <img
           data-aos="fade-left"
-          className="w-3/6"
+          className="w-full md:w-3/6 mt-24 md:mt-0"
           src="https://ggvktlgwmfhumvfhiliw.supabase.co/storage/v1/object/sign/Storage/Banner.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJTdG9yYWdlL0Jhbm5lci5wbmciLCJpYXQiOjE3MTgzMzMxNzUsImV4cCI6MTAzNTgzMzMxNzV9.gh5wRj7HpBSkR9ndE0ykOwQoSUsardNg8CNOBf0ifpE&t=2024-06-14T02%3A46%3A14.668Z"
         />
       </section>
-
 
 
 
