@@ -30,3 +30,13 @@
 .section-newsletter__div{
     background-color: rgba(6, 71, 44, 0.7);
 }
+
+.login-hidden{
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: all 0.3s ease-in-out;
+}
+
+.login-show{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    transition: all 0.3s ease-in-out;
+}
