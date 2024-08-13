@@ -2,7 +2,7 @@ import React from 'react'
 
 export const SeeMore = () => {
     return (
-        <div className="px-14 flex flex-col sm:flex-row items-start justify-between">
+        <div className="px-8 md:px-14 flex flex-col sm:flex-row items-start justify-between">
             <img className="w-full sm:w-2/4" src="https://ggvktlgwmfhumvfhiliw.supabase.co/storage/v1/object/sign/Storage/pexels-expect-best-79873-323705-removebg-preview.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJTdG9yYWdlL3BleGVscy1leHBlY3QtYmVzdC03OTg3My0zMjM3MDUtcmVtb3ZlYmctcHJldmlldy5wbmciLCJpYXQiOjE3MTg2MzE0OTEsImV4cCI6Nzg2MTQ2MzE0OTF9.iKiA7_W3Fbk4q4gbih-r7CmxSaZ4vzIJiRk8H93J3eQ&t=2024-06-17T13%3A38%3A10.731Z" />
             <div className="w-full sm:w-2/4">
                 <h2 className="mt-5 md:mt-0 text-center md:text-left text-2xl sm:text-4xl font-bold">

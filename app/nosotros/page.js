@@ -6,7 +6,7 @@ export default function Nosotros() {
     return (
         <div>
             <section className='w-full min-h-[300px]'>
-                <div className='w-full h-full px-4 sm:px-14 py-10'>
+                <div className='w-full h-full px-8 sm:px-14 py-10'>
                     <div className='w-full'>
                         <h2 className='text-3xl sm:text-4xl font-bold'>Nosotros</h2>
                         <div className='w-full mt-12 flex flex-col sm:flex-row gap-8 items-start justify-between'>

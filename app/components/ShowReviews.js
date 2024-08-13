@@ -48,7 +48,7 @@ export const ShowReviews = () => {
 
 
     return (
-        <section className="w-full min-h-[30] px-4 sm:px-14 mt-32 mb-12">
+        <section className="w-full min-h-[30] px-8 sm:px-14 mt-32 mb-12">
             <h3 className="text-center text-2xl sm:text-3xl mt-16 mb-10 font-bold">¿Qué dice la gente?</h3>
             <Swiper pagination={{ clickable: true }} modules={[Pagination]} className="mySwiper">
                 {
