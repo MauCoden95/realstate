@@ -26,29 +26,10 @@ export const Header = () => {
       <Link className="text-teal-800 text-3xl" href="/">
         Real <span className="text-orange-700">State</span>
       </Link>
-      <nav className={`absolute ${nav ? "right-0" : "-right-[1500px]"} top-0 duration-700 z-40 w-full h-full bg-gray-300 md:bg-transparent md:relative md:right-0 md:w-3/5 md:h-full`}>
-        <button onClick={handleNav}>
-          <FontAwesomeIcon
-            className="absolute md:hidden right-0 w-10 text-black"
-            icon={faTimes}
-            style={{ fontSize: "2.1rem" }}
-          />
-        </button>
-        <ul className="w-full flex flex-col md:flex-row items-center justify-center md:justify-between h-full md:h-auto">
-          <Link className="my-5 hover:text-teal-700 duration-300" href="/">
-            Inicio
-          </Link>
-          <Link className="my-5 hover:text-teal-700 duration-300" href="/nosotros">
-            Nosotros
-          </Link>
-          <Link className="my-5 hover:text-teal-700 duration-300" href="/">
-            Propiedades
-          </Link>
-          <Link className="my-5 hover:text-teal-700 duration-300" href="/contacto">
-            Contacto
-          </Link>
-        </ul>
-      </nav>
+
+     
+
+     
 
       <button className="md:hidden" onClick={handleNav}>
         <FontAwesomeIcon
@@ -56,7 +37,7 @@ export const Header = () => {
           icon={faBars}
           style={{ fontSize: "1.3rem" }}
         />
-      </button>
+      </button> 
 
       <button
         onClick={handleLogin}

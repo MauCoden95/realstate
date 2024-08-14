@@ -1,10 +1,10 @@
 import React from 'react'
 
-export const PropertyFilters = ({ prop, setProp, type, setType, showOnlyAvailable, setShowOnlyAvailable }) => {
+export const PropertyFilters = ({ title, prop, setProp, type, setType, showOnlyAvailable, setShowOnlyAvailable }) => {
     return (
         <div>
             <div className="w-full flex flex-col sm:flex-row items-center justify-start">
-                <h3 className="text-2xl sm:text-4xl font-bold">Propiedades destacadas</h3>
+                <h3 className="text-2xl sm:text-4xl font-bold">{title}</h3>
                 <div className="mt-4 sm:mt-0 sm:ml-20 flex flex-wrap">
                     <button
                         onClick={() => setProp("Venta")}

@@ -45,6 +45,7 @@ export const ShowProperties = () => {
   return (
     <section className="w-full min-h-[30] px-8 sm:px-14 mt-20 mb-12">
       <PropertyFilters
+        title="Propiedades destacadas"
         prop={prop}
         setProp={setProp}
         type={type}
