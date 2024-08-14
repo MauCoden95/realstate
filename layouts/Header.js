@@ -29,7 +29,29 @@ export const Header = () => {
 
      
 
-     
+      <nav className={`w-full bg-red-500`}>
+        <button onClick={handleNav}>
+          <FontAwesomeIcon
+            className="absolute md:hidden right-0 w-10 text-black"
+            icon={faTimes}
+            style={{ fontSize: "2.1rem" }}
+          />
+        </button>
+        <ul className="w-full bg-fuchsia-600 flex flex-col md:flex-row items-center justify-center md:justify-between h-full md:h-auto">
+          <Link className="my-5 hover:text-teal-700 duration-300" href="/">
+            Inicio
+          </Link>
+          <Link className="my-5 hover:text-teal-700 duration-300" href="/nosotros">
+            Nosotros
+          </Link>
+          <Link className="my-5 hover:text-teal-700 duration-300" href="/todas-las-propiedades">
+            Propiedades
+          </Link>
+          <Link className="my-5 hover:text-teal-700 duration-300" href="/contacto">
+            Contacto
+          </Link>
+        </ul>
+      </nav>
 
       <button className="md:hidden" onClick={handleNav}>
         <FontAwesomeIcon

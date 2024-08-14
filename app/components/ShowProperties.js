@@ -10,7 +10,7 @@ import useProperty from '../hooks/useProperty';
 
 export const ShowProperties = () => {
 
-
+  const [city, setCity] = useState("");
   const [prop, setProp] = useState("");
   const [type, setType] = useState("");
   const [showOnlyAvailable, setShowOnlyAvailable] = useState(false);
@@ -23,7 +23,7 @@ export const ShowProperties = () => {
   
   useEffect(() => {
     filterProperties();
-  }, [prop, type, properties, showOnlyAvailable]);
+  }, [city, prop, type, properties, showOnlyAvailable]);
 
 
 
@@ -31,11 +31,12 @@ export const ShowProperties = () => {
     let propFilter = properties.filter((item) => {
       let matchesOperation = (!prop || item.operation === prop);
       let matchesType = (!type || item.type === type);
+      let matchesCity = (!city || item.city.toLowerCase().includes(city.toLowerCase()));
 
       if (showOnlyAvailable) {
-        return matchesOperation && matchesType && item.state === "Disponible";
+        return matchesCity && matchesOperation && matchesType && item.state === "Disponible";
       } else {
-        return matchesOperation && matchesType;
+        return matchesCity && matchesOperation && matchesType;
       }
     });
 
@@ -46,6 +47,8 @@ export const ShowProperties = () => {
     <section className="w-full min-h-[30] px-8 sm:px-14 mt-20 mb-12">
       <PropertyFilters
         title="Propiedades destacadas"
+        city={city}
+        setCity={setCity}
         prop={prop}
         setProp={setProp}
         type={type}

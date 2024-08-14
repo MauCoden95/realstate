@@ -55,6 +55,7 @@ export default function Propiedades() {
 
             <PropertyFilters
                 title="Todas las propiedades"
+                city={city}
                 prop={prop}
                 setProp={setProp}
                 type={type}

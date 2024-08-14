@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const PropertyFilters = ({ title, prop, setProp, type, setType, showOnlyAvailable, setShowOnlyAvailable }) => {
+export const PropertyFilters = ({ title, city, setCity, prop, setProp, type, setType, showOnlyAvailable, setShowOnlyAvailable }) => {
     return (
         <div>
             <div className="w-full flex flex-col sm:flex-row items-center justify-start">
@@ -26,6 +26,23 @@ export const PropertyFilters = ({ title, prop, setProp, type, setType, showOnlyA
                     </button>
                 </div>
             </div>
+
+
+            <label
+                htmlFor="UserEmail"
+                className="block overflow-hidden rounded-md my-12 border border-gray-400 focus:border-teal-600 duration-300 px-3 py-2 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600"
+            >
+                <span className=" font-medium mb-12 text-gray-700"> Ubicación</span>
+
+                <input
+                    onChange={(e) => setCity(e.target.value.trim())}
+                    type="text"
+                    placeholder="Ciudad o barrio..."
+                    className="mt-1 w-full border-none p-0 focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
+                />
+            </label>
+
+
             <div className="w-full my-12 flex flex-wrap items-center justify-between">
                 <button
                     onClick={() => setType("Casa")}
@@ -62,6 +79,13 @@ export const PropertyFilters = ({ title, prop, setProp, type, setType, showOnlyA
                 >
                     Terreno
                 </button>
+                <button
+                    onClick={() => setType("Garage")}
+                    className={` ${type == "Garage" ? "text-teal-700 underline" : ""
+                        } text-lg sm:text-xl`}
+                >
+                    Garage
+                </button>
             </div>
             <label className="flex items-center">
                 <input
@@ -71,6 +95,7 @@ export const PropertyFilters = ({ title, prop, setProp, type, setType, showOnlyA
                 />
                 <span className="ml-3 text-sm sm:text-base">Mostrar sólo propiedades disponibles</span>
             </label>
+            
         </div>
     )
 }
