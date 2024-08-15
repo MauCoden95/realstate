@@ -7,10 +7,12 @@ import {
     faHeart
   } from "@fortawesome/free-solid-svg-icons";
 
+import '@/assets/css/Styles.css'
+
 export const PropertyCard = ({ item }) => {
     return (
         <div
-            className="relative shadow_style w-full min-h-[50px] mt-16 bg-gray-200 p-2 rounded-md"
+            className="relative shadow_style w-full min-h-[50px] mt-16 bg-gray-200 p-2 rounded-md duration-200"
             
         >
             <span

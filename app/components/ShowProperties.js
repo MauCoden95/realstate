@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import useProperties from '../hooks/useProperties';
 import { PropertyCard } from './PropertyCard';
 import { PropertyFilters } from './PropertyFilters';
-import useProperty from '../hooks/useProperty';
+import PropertyList from './PropertyList';
 
 export const ShowProperties = () => {
 
@@ -59,17 +59,7 @@ export const ShowProperties = () => {
 
       <br />
 
-      <div className="w-full min-h-[300px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {filteredProperties.length == 0 ? (
-          <div className="col-span-1 sm:col-span-3 text-center text-xl mt-12 text-gray-500">
-            No hay propiedades disponibles para este filtro.
-          </div>
-        ) : (
-          filteredProperties.map((item, key) => (
-            <PropertyCard item={item} key={key} />
-          ))
-        )}
-      </div>
+     <PropertyList filteredProperties={filteredProperties}/>
     </section>
   )
 }

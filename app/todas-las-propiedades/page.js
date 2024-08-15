@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react'
 import useAllProperties from '../hooks/useAllProperties'
-import { PropertyCard } from '../components/PropertyCard';
+import PropertyList from '../components/PropertyList';
 import { PropertyFilters } from '../components/PropertyFilters';
 
 
@@ -10,6 +10,10 @@ export default function Propiedades() {
 
     const properties = useAllProperties();
 
+
+    const [minPrice, setMinPrice] = useState('1');
+    const [maxPrice, setMaxPrice] = useState('10000000000000');
+    const [city, setCity] = useState("");
     const [prop, setProp] = useState("");
     const [type, setType] = useState("");
     const [showOnlyAvailable, setShowOnlyAvailable] = useState(false);
@@ -22,19 +26,24 @@ export default function Propiedades() {
 
     useEffect(() => {
         filterProperties();
-    }, [prop, type, properties, showOnlyAvailable]);
+    }, [minPrice, maxPrice, city, prop, type, properties, showOnlyAvailable]);
 
 
 
     const filterProperties = () => {
         let propFilter = properties.filter((item) => {
+            let priceSplit = item.price.split(' ');
+            let matchesMinPrice = (!minPrice || parseInt(priceSplit[0]) > parseInt(minPrice));
+            let matchesMaxPrice = (!maxPrice || parseInt(priceSplit[0]) < parseInt(maxPrice));
             let matchesOperation = (!prop || item.operation === prop);
             let matchesType = (!type || item.type === type);
+            let matchesCity = (!city || item.city.toLowerCase().includes(city.toLowerCase()));
+            
 
             if (showOnlyAvailable) {
-                return matchesOperation && matchesType && item.state === "Disponible";
+                return matchesMinPrice && matchesMaxPrice && matchesCity && matchesOperation && matchesType && item.state === "Disponible";
             } else {
-                return matchesOperation && matchesType;
+                return matchesMinPrice && matchesMaxPrice && matchesCity && matchesOperation && matchesType;
             }
         });
 
@@ -42,9 +51,8 @@ export default function Propiedades() {
     };
 
 
-
     useEffect(() => {
-        console.log(properties);
+        //console.log(properties);
     }, [properties]);
 
     return (
@@ -55,7 +63,12 @@ export default function Propiedades() {
 
             <PropertyFilters
                 title="Todas las propiedades"
+                minPrice={minPrice}
+                setMinPrice={setMinPrice}
+                maxPrice={maxPrice}
+                setMaxPrice={setMaxPrice}
                 city={city}
+                setCity={setCity}
                 prop={prop}
                 setProp={setProp}
                 type={type}
@@ -64,17 +77,7 @@ export default function Propiedades() {
                 setShowOnlyAvailable={setShowOnlyAvailable}
             />
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                {filteredProperties.length == 0 ? (
-                    <div className="col-span-1 sm:col-span-3 text-center text-xl mt-12 text-gray-500">
-                        No hay propiedades disponibles para este filtro.
-                    </div>
-                ) : (
-                    filteredProperties.map((item, key) => (
-                        <PropertyCard item={item} key={key} />
-                    ))
-                )}
-            </div>
+            <PropertyList filteredProperties={filteredProperties} />
 
         </section>
     )
