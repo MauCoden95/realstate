@@ -7,9 +7,22 @@ import {
     faHeart
   } from "@fortawesome/free-solid-svg-icons";
 
+  import Swal from 'sweetalert2';
+
 import '@/assets/css/Styles.css'
 
 export const PropertyCard = ({ item }) => {
+
+    const addFavourite = () => {
+        Swal.fire({
+          title: 'Error',
+          text: 'Debe estar logueado para agregar propiedad como favorita.',
+          icon: 'error',
+          confirmButtonText: 'Aceptar',
+          confirmButtonColor: '#d33'
+        });
+      };
+
     return (
         <div
             className="relative shadow_style w-full min-h-[50px] mt-16 bg-gray-200 p-2 rounded-md duration-200"
@@ -49,7 +62,7 @@ export const PropertyCard = ({ item }) => {
                 />
                 <span className="text-lg sm:text-xl ml-3">{item.ambients}</span>
             </h3>
-            <button className="absolute right-14 bottom-2 hover:bg-teal-400 duration-300 p-1 rounded-md border border-teal-500">
+            <button onClick={addFavourite} className="absolute right-14 bottom-2 hover:bg-teal-400 duration-300 p-1 rounded-md border border-teal-500">
                 <FontAwesomeIcon
                     className="w-7 text-black duration-300"
                     icon={faHeart}

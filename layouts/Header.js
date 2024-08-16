@@ -29,7 +29,7 @@ export const Header = () => {
 
      
 
-      <nav className={`w-full bg-red-500`}>
+      <nav className={`absolute ${nav ? "right-0" : "-right-[1500px]"} top-0 duration-700 z-40 w-full h-full bg-gray-300 md:bg-transparent md:relative md:right-0 md:w-3/5 md:h-full`}>
         <button onClick={handleNav}>
           <FontAwesomeIcon
             className="absolute md:hidden right-0 w-10 text-black"
@@ -37,17 +37,17 @@ export const Header = () => {
             style={{ fontSize: "2.1rem" }}
           />
         </button>
-        <ul className="w-full bg-fuchsia-600 flex flex-col md:flex-row items-center justify-center md:justify-between h-full md:h-auto">
-          <Link className="my-5 hover:text-teal-700 duration-300" href="/">
+        <ul className="w-full flex flex-col md:flex-row items-center justify-center md:justify-between h-full md:h-auto">
+          <Link onClick={ () => handleNav(false) } className="my-5 hover:text-teal-700 duration-300 text-2xl md:text-base" href="/">
             Inicio
           </Link>
-          <Link className="my-5 hover:text-teal-700 duration-300" href="/nosotros">
+          <Link onClick={ () => handleNav(false) } className="my-5 hover:text-teal-700 duration-300 text-2xl md:text-base" href="/nosotros">
             Nosotros
           </Link>
-          <Link className="my-5 hover:text-teal-700 duration-300" href="/todas-las-propiedades">
+          <Link onClick={ () => handleNav(false) } className="my-5 hover:text-teal-700 duration-300 text-2xl md:text-base" href="/todas-las-propiedades">
             Propiedades
           </Link>
-          <Link className="my-5 hover:text-teal-700 duration-300" href="/contacto">
+          <Link onClick={ () => handleNav(false) } className="my-5 hover:text-teal-700 duration-300 text-2xl md:text-base" href="/contacto">
             Contacto
           </Link>
         </ul>
@@ -86,6 +86,7 @@ export const Header = () => {
         />
         <h3 className="mt-4 mb-2 text-center">¿No tiene cuenta?</h3>
         <Link
+          onClick={ () => setLogin(!login) }
           className="block w-auto text-center mb-3 text-cyan-900 hover:text-cyan-600 duration-300"
           href="/registro">
           Registrese acá

@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react'
 import useAllProperties from '../hooks/useAllProperties'
 import PropertyList from '../components/PropertyList';
 import { PropertyFilters } from '../components/PropertyFilters';
+import { ShowEntrepreneurships } from '../components/ShowEntrepreneurships';
+
 
 
 export default function Propiedades() {
@@ -12,7 +14,7 @@ export default function Propiedades() {
 
 
     const [minPrice, setMinPrice] = useState('1');
-    const [maxPrice, setMaxPrice] = useState('10000000000000');
+    const [maxPrice, setMaxPrice] = useState('10000000');
     const [city, setCity] = useState("");
     const [prop, setProp] = useState("");
     const [type, setType] = useState("");
@@ -79,6 +81,8 @@ export default function Propiedades() {
 
             <PropertyList filteredProperties={filteredProperties} />
 
+
+            <ShowEntrepreneurships />
         </section>
     )
 }

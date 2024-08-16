@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Image from 'next/image';
 import House from '../../assets/img/House.png';
 import Building from '../../assets/img/Building.png';
@@ -9,7 +9,12 @@ import Key from '../../assets/img/Key.png';
 
 
 
+
 export const PropertyFilters = ({ title, minPrice, setMinPrice, maxPrice, setMaxPrice, city, setCity, prop, setProp, type, setType, showOnlyAvailable, setShowOnlyAvailable }) => {
+    
+  useEffect(() => {
+  }, []);
+    
     return (
         <div>
             <div className="w-full flex flex-col sm:flex-row items-center justify-start">
@@ -58,13 +63,14 @@ export const PropertyFilters = ({ title, minPrice, setMinPrice, maxPrice, setMax
                         htmlFor="UserEmail"
                         className="block w-2/4 h-16 text-sm md:text-base overflow-hidden rounded-md my-5 border border-gray-400 focus:border-teal-600 duration-300 px-3 py-2 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600"
                     >
-                        <span className=" font-medium mb-12 text-gray-700"> Precio mínimo</span>
+                        <span className=" font-medium mb-12 text-gray-700"> Mínimo $ {minPrice}</span>
 
                         <input
                             onChange={(e) => setMinPrice(e.target.value.trim())}
-                            type="text"
+                            type="range"
+                            min="0" max="1300000"
                             placeholder="Pesos o dólares"
-                            className="mt-1 w-full border-none p-0 focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
+                            className="custom-range mt-1 w-full border-none p-0 focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
                         />
                     </label>
 
@@ -73,13 +79,14 @@ export const PropertyFilters = ({ title, minPrice, setMinPrice, maxPrice, setMax
                         htmlFor="UserEmail"
                         className="block w-2/4 h-16 text-sm md:text-base overflow-hidden rounded-md my-5 border border-gray-400 focus:border-teal-600 duration-300 px-3 py-2 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600"
                     >
-                        <span className=" font-medium mb-12 text-gray-700"> Precio máximo</span>
+                        <span className=" font-medium mb-12 text-gray-700"> Máximo $ {maxPrice}</span>
 
                         <input
                             onChange={(e) => setMaxPrice(e.target.value.trim())}
-                            type="text"
+                            type="range"
+                            min="0" max="1300000"
                             placeholder="Pesos o dólares"
-                            className="mt-1 w-full border-none p-0 focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
+                            className="custom-range mt-1 w-full border-none p-0 focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
                         />
                     </label>
                 </div>
